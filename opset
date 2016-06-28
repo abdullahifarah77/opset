@@ -1,11 +1,11 @@
-
+cd / && \
 apt-get update -y && \
 apt-get install -y python-software-properties && \
 apt-get install -y sqlite3 && \
-apt-get install -yq software-properties-common  && \
-add-apt-repository -y ppa:mrazavi/openvas  && \
+apt-get install -yq software-properties-common && \
+add-apt-repository -y ppa:mrazavi/openvas && \
 add-apt-repository -y ppa:mikesplain/openvas && \
-apt-get update-y && \
+apt-get update -y && \
 apt-get install -yq alien \
 dirb \
 nikto \
@@ -19,9 +19,6 @@ python \
 python-paramiko \
 python-pip \
 python-setuptools \
-python3 \
-python3-pip \
-python3-setuptools \
 rpm \
 rsync \
 sqlite3 \
@@ -93,7 +90,11 @@ wget http://www.openvas.org/OpenVAS_TI.asc && \
 gpg --homedir=/var/lib/openvas/gnupg --gen-key && \
 gpg --homedir=/var/lib/openvas/gnupg --import OpenVAS_TI.asc && \
 gpg --homedir=/var/lib/openvas/gnupg  --lsign-key 48DB4530 && \
-apt-get install -y freetds-dev && \
+apt-get install -y freetds-dev \
+python3 \
+python3-pip \
+python3-setuptools \
+&& \
 pip3 install -y pymssql && \
 cd /openvas && \
 ./openvas-check-setup
